@@ -12,15 +12,17 @@
     // 🐨 use that function in place of the divs below with:
     // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
 
-    const Message = (props) =>{
+    const Message = ({subject, greeting}) => {
       return (
-        <div className="message">{props.children}</div>
+        <div className="message">
+          {greeting} {subject}
+        </div>
       )
     }
     const element = (
       <div className="container">
-        <Message children='Hello World'/>
-        <Message children='Goddbye World'/>
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
       </div>
     )
 
